@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DragFileInput from "./components/drag-file-input/DragFileInput";
 
 function App() {
+  //use this func to define what to do with the uploaded file
+  const onFileChange = (files) => {
+    console.log(files);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="box">
+      <h2 className="header">Upload component</h2>
+      <DragFileInput onFileChange={(files) => onFileChange(files)} />
     </div>
   );
 }
